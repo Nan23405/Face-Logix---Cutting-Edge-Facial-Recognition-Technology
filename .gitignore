@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data and Images
+*.jpg
+*.jpeg
+*.png
+*.gif
+1628243597666college-images/
+college_images/
+
+# Virtual Environment
+pip-log.txt
+pip-delete-this-directory.txt
+
+# OS
+.DS_Store
+Thumbs.db
