@@ -1,30 +1,3 @@
-# from tkinter import*
-# from tkinter import ttk
-# from PIL import Image, ImageTk
-
-
-# class Face_Recognition_System:
-#     def __init__(self, root): #constructor called
-#         self.root = root #root window assigned to self.root
-#         self.root.geometry("1530x790+0+0") #(Width,length,x-axis,y-axis)
-#         self.root.title("Face Recognition System")
-
-#         img = Image.open(r"C:/Users/singh/Documents/Face_Rec Images/Stanford.jpg") #image path set.
-        
-#         img = img.resize((500, 130), Image.Resampling.LANCZOS) #image resized
-#         self.photoimg = ImageTk.PhotoImage(img) #image converted to PhotoImage
-
-#         f_lbl = Label(self.root, image=self.photoimg)
-#         f_lbl.image = self.photoimg   # <-- VERY IMPORTANT
-#         f_lbl.place(x=0, y=0, width=500, height=130) #image placed on window
-
-
-
-# if __name__ == "__main__": #main":
-#     root = Tk() #creating object of Tk(toolkit) class
-#     obj = Face_Recognition_System(root) #object class
-#     root.mainloop() #mainloop is used to run the application, and wait for an event to occur
-
 from tkinter import *
 from PIL import Image, ImageTk
 
@@ -36,11 +9,11 @@ class Face_Recognition_System:
         self.root.geometry("1530x790+0+0")
         self.root.title("Face Recognition System")
 
+        # First Image
         img = Image.open(
             r"C:/Users/singh/Documents/Face_Rec Images/Stanford.jpg"
         ).convert("RGB")
 
-        # First Image
         img = img.resize((500, 130), Image.Resampling.LANCZOS)
         self.photoimg = ImageTk.PhotoImage(img)
 
