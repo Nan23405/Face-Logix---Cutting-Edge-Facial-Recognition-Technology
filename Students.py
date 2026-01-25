@@ -11,7 +11,7 @@ class Students:
 
         # First Image
         img = Image.open(
-            r"C:/Users/singh/Documents/Face_Rec Images/students_1.jpg"
+            r"C:/Users/singh/Documents/Face_Rec Images/student1_1.jpg"
         ).convert("RGB")
 
         img = img.resize((500, 130), Image.Resampling.LANCZOS)
@@ -35,7 +35,7 @@ class Students:
 
         # Third Image
         img2 = Image.open(
-            r"C:/Users/singh/Documents/Face_Rec Images/students_3.jpg"
+            r"C:/Users/singh/Documents/Face_Rec Images/st_1.jpg"
         ).convert("RGB")
 
         img2 = img2.resize((500, 130), Image.Resampling.LANCZOS)
@@ -47,7 +47,7 @@ class Students:
 
         # bg Image
         img3 = Image.open(
-            r"C:/Users/singh/Documents/Face_Rec Images/bgimg1.jpg"
+            r"C:/Users/singh/Documents/Face_Rec Images/bg_future.webp"
         ).convert("RGB")
 
         img3 = img3.resize((1530, 710), Image.Resampling.LANCZOS)
@@ -60,10 +60,10 @@ class Students:
         bg_img = Label(self.root, image=self.photoimg3)
         bg_img.place(x=0, y=130, width=1530, height=710)
 
-        title_lbl = Label(bg_img, text="Students Management SYSTEM", font=("times new roman", 35, "bold"), bg="white", fg="dark green")
+        title_lbl = Label(bg_img, text="FACE RECOGNITION ATTENDANCE SYSTEM", font=("times new roman", 35, "bold"), bg="white", fg="dark green")
         title_lbl.place(x=0, y=0, width = 1530, height=45)
 
-
+        
 if __name__ == "__main__":
     root = Tk()
     obj = Students(root)
