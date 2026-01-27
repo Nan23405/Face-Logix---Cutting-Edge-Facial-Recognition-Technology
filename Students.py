@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import ttk
 from PIL import Image, ImageTk
 
 class Students:
@@ -60,10 +61,43 @@ class Students:
         bg_img = Label(self.root, image=self.photoimg3)
         bg_img.place(x=0, y=130, width=1530, height=710)
 
-        title_lbl = Label(bg_img, text="FACE RECOGNITION ATTENDANCE SYSTEM", font=("times new roman", 35, "bold"), bg="white", fg="dark green")
+        title_lbl = Label(bg_img, text="STUDENT MANAGEMENT SYSTEM", font=("times new roman", 35, "bold"), bg="white", fg="dark green")
         title_lbl.place(x=0, y=0, width = 1530, height=45)
 
-        
+        main_frame = Frame(bg_img, bd=2, bg="white")
+        main_frame.place(x=20, y=55, width=1490, height=600)
+
+        # left label frame
+        Left_frame = LabelFrame(main_frame,bd=2, bg="white", relief=RIDGE, text="Student Details", font=("times new roman", 12, "bold"))
+        Left_frame.place(x=10,y=10, width=760, height=580)
+
+        # Left Image
+        img_left = Image.open(
+            r"C:/Users/singh/Documents/Face_Rec Images/facial-recognition_0.jpg"
+        ).convert("RGB")
+
+        img_left = img_left.resize((750, 150), Image.Resampling.LANCZOS)
+        self.photoimg_left = ImageTk.PhotoImage(img_left)
+
+        self.f_lbl3 = Label(Left_frame, image=self.photoimg_left, bd=4, relief="solid", bg="white")
+        self.f_lbl3.image = self.photoimg_left
+        self.f_lbl3.place(x=8, y=0, width=750, height=150)
+
+        # Current Course
+        current_course_frame = LabelFrame(Left_frame,bd=2, bg="white", relief=RIDGE, text="Current Course Information", font=("times new roman", 12, "bold"))
+        current_course_frame.place(x=8,y=150, width=750, height=150)
+
+        dep_label = Label(current_course_frame, text="Department", font=("times new roman", 12, "bold"), bg="white")
+        dep_label.grid(row=0, column=0, padx=10, pady=5, sticky=W)
+
+        dep_combo = ttk.Combobox(current_course_frame, font=("times new roman", 12, "bold"), state="readonly", width=20)
+        dep_combo["values"] = ("Select Department", "Computer Science", "Electrical Engineering", "Mechanical Engineering", "Civil Engineering")
+        dep_combo.current(0) # Will show Select Departmnet
+        dep_combo.grid(row=0, column=1, padx=2, pady=5)
+
+        # Right label frame
+        Right_frame = LabelFrame(main_frame,bd=2, bg="white", relief=RIDGE, text="Student Details", font=("times new roman", 12, "bold"))
+        Right_frame.place(x=780,y=10, width=660, height=580)
 if __name__ == "__main__":
     root = Tk()
     obj = Students(root)
